@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital | Belani Studio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/style.css">   
+    </head>
+    <body>
+
+    <main class="card-container">
+        <img src="assets/img/logoBelani.jpeg" alt="Logo Belani Studio" class="avatar">
+        <h1 class="name">Belani Studio</h1>
+        <p class="title">Salón de Belleza</p>
+        <p class="bio">¡Me haría muy feliz que formes parte de esta nueva historia! Agenda tu cita con nosotros.</p>
+        <div class="services-grid">
+        <span class="service-tag">Corte de cabello</span>
+        <span class="service-tag">Tinte y Efectos</span>
+        <span class="service-tag">Tratamientos y keratina</span>
+        <span class="service-tag">Peinados</span>
+        <span class="service-tag">Laminado de cejas</span>
+        <span class="service-tag">Lifting de pestañas</span>
+        <span class="service-tag">Manicura</span>
+        <span class="service-tag">Maquillaje social</span>
+        </div>
+
+        <div class="links-list">
+        <button class="action-btn primary" onclick="downloadVCard()">
+            <i class="bi bi-person-plus-fill"></i> Guardar en Contactos
+        </button>
+
+        <a href="https://wa.me/522282063605?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20Belani%20Studio" target="_blank" rel="noopener noreferrer" class="action-btn">
+            <i class="bi bi-whatsapp"></i> Agendar cita
+        </a>
+        <a href="https://www.facebook.com/share/1PgtZJv3H1/" target="_blank" rel="noopener noreferrer" class="action-btn">
+            <i class="bi bi-facebook"></i> Belani.studio
+
+        </a>
+        <a href="https://www.instagram.com/belani.studio_?utm_source=qr" target="_blank" rel="noopener noreferrer" class="action-btn">
+            <i class="bi bi-instagram"></i> @belani.studio_
+        </a>
+        <a href="https://maps.google.com/?q=Landero+y+coss+9+Zona+centro" target="_blank" rel="noopener noreferrer" class="action-btn">
+            <i class="bi bi-geo-alt-fill"></i> Landero y coss #9
+        </a>
+        </div>
+    </main>
+
+    <script>
+        function downloadVCard() {
+        const contactData = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            'FN:Belani Studio',
+            'ORG:Belani Studio',
+            'TITLE:Salón de Belleza',
+            'TEL;TYPE=WORK,VOICE:+522282681692',
+            'URL:https://instagram.com/belani.studio_',
+            'ADR;TYPE=WORK:;;Landero y Coss #9, Zona centro;;;;',
+            'END:VCARD'
+        ].join('\n');
+
+        const blob = new Blob([contactData], { type: 'text/vcard;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'belani_studio.vcf');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        }
+    </script>
+    </body>
+</html>
