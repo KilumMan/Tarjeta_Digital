@@ -46,14 +46,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: var(--text-main);
-  font-family: 'Georgia', serif; /* Tipografía más elegante para contrastar */
-}
-
 .title {
   font-size: 0.95rem;
   color: var(--accent);
