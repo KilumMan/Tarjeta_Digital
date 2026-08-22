@@ -65,13 +65,13 @@ body {
 /* 1. Importación de las fuentes personalizadas (Ajusta la ruta 'src' según donde tengas los archivos) */
 @font-face {
   font-family: 'Hatton';
-  src: url('assets/fonts/hatton.ttf') format('truetype');
+  src: url('fonts/hatton.ttf') format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Moontime regular';
-  src: url('assets/fonts/moontime-regular.ttf') format('truetype');
+  src: url('fonts/moontime-regular.ttf') format('truetype');
   font-weight: normal;
 }
 
